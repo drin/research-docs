@@ -1,0 +1,10 @@
+[book]
+title        = "Research, documented"
+authors      = ["Aldrin Montana"]
+description  = "A single location for documentation of all my research. Primarily the research I'd like to continue working with well into the future."
+language     = "en"
+multilingual = false
+src          = "content"
+
+[build]
+build-dir    = "compiled-book"
