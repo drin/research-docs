@@ -70,17 +70,19 @@ remaining use cases.
 ## DBMS Tuning
 
 References to curate later:
-* [Foreign tables][repo-skyhookfdw]
-* [PostgreSQL FDW docs][postgres-fdw]
-* [PostgreSQL Foreign Table][postgres-foreigntable]
-* [Arrow FDW for PG-strom][pgstrom-fdw]
 * [PostgreSQL on ZFS][docs-postgres-zfs]
 * [Tuning PostgreSQL on ZFS][docs-postgres-zfs2]
 * [Blog - PostgreSQL on ZFS][blog-postgres-zfs]
-* [OpenZFS - Workload Tuning][docs-openzfs]
-* [ZFS on ArchLinux][docs-zfs-archlinux]
-* [Ars Technica - ZFS storage][article-zfs]
-* [pthree Blog - ZFS Administration][blog-zfs-admin]
+
+## Foreign Tables
+
+References to curate later:
+* [Skyhook foreign tables][repo-skyhookfdw]
+* [PostgreSQL FDW docs][postgres-fdw]
+* [PostgreSQL Foreign Table][postgres-foreigntable]
+* [Arrow FDW for PG-strom][pgstrom-fdw]
+* [Table Partitioning][postgres-partitions]
+
 
 <!-- Note: this likely can be moved to a blog or research-oriented writing of some sort -->
 <!--
@@ -99,17 +101,14 @@ it easy to specifically manage the one that uses a data directory on the ZFS poo
 
 <!-- resources -->
 [web-postgres]:          https://www.postgresql.org/
-[postgres-fdw]:          https://www.postgresql.org/docs/12/sql-createforeigndatawrapper.html
-[postgres-foreigntable]: https://www.postgresql.org/docs/10/sql-createforeigntable.html
+[postgres-fdw]:          https://www.postgresql.org/docs/13/sql-createforeigndatawrapper.html
+[postgres-foreigntable]: https://www.postgresql.org/docs/13/sql-createforeigntable.html
+[postgres-partitions]:   https://www.postgresql.org/docs/13/ddl-partitioning.html
 
 [pgstrom-fdw]:           https://heterodb.github.io/pg-strom/arrow_fdw/
 [docs-postgres-zfs]:     https://wiki.postgresql.org/images/8/86/PostgreSQL_on_ZFS.pdf
 [docs-postgres-zfs2]:    https://pg.uptrace.dev/zfs/
-[docs-openzfs]:          https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html
-[docs-zfs-archlinux]:    https://wiki.archlinux.org/index.php/ZFS#Storage_pools
 [blog-postgres-zfs]:     https://evol-monkey.blogspot.com/2017/08/postgresql-on-zfs.html
-[blog-zfs-admin]:        https://pthree.org/2012/12/10/zfs-administration-part-v-exporting-and-importing-zpools/
-[article-zfs]:           https://arstechnica.com/information-technology/2020/05/zfs-101-understanding-zfs-storage-and-performance/
 
 [repo-skyhookfdw]:       https://github.com/uccross/skyhookdm-ceph/blob/skyhook-luminous/src/progly/cloudlab_postgres_bench/postgres-skyhook-example.sql
 
