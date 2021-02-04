@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Code Repositories - Research, documented</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A single location for documentation of all my research. Primarily the research I'd like to continue working with well into the future.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="data.html"><strong aria-hidden="true">1.</strong> Data Domain</a></li><li class="chapter-item expanded "><a href="dbms.html"><strong aria-hidden="true">2.</strong> PostgreSQL DB</a></li><li class="chapter-item expanded "><a href="storage.html"><strong aria-hidden="true">3.</strong> Storage System</a></li><li class="chapter-item expanded "><a href="repos.html" class="active"><strong aria-hidden="true">4.</strong> Code Repositories</a></li><li class="chapter-item expanded "><a href="experiment.html"><strong aria-hidden="true">5.</strong> Experimental Setup</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Research, documented</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#code-and-repositories" id="code-and-repositories">Code and Repositories</a></h1>
+<h2><a class="header" href="#xhcadb" id="xhcadb">xhcaDB</a></h2>
+<p>The repository <a href="https://gitlab.com/xhca/xhcadb">xhcadb</a> is checked out to:</p>
+<pre><code class="language-bash">    ${zfs-datadir}/code/xhcadb
+</code></pre>
+<p>The repository layout is (roughly) as follows:</p>
+<pre><code class="language-bash">    &gt;&gt; tree -L 1 -C
+    .
+    ├── poetry.lock
+    ├── pyproject.toml
+    ├── README.md
+    ├── R
+    ├── resources
+    ├── shell-scripts
+    ├── sql
+    ├── tests
+    ├── toolbox
+    └── xhcadb
+
+    7 directories, 3 files
+</code></pre>
+<h4><a class="header" href="#shell-scripts" id="shell-scripts">Shell scripts</a></h4>
+<p>The shell-scripts directory is a bit chaotic, but has the following layout:</p>
+<pre><code class="language-bash">    &gt;&gt; tree -L 1 -C
+    .
+    ├── convert-simulated-data.fish
+    ├── extract
+    ├── infrastructure
+    ├── load
+    ├── perf
+    └── transform
+
+    5 directories, 5 files
+</code></pre>
+<p>All shell scripts have an appropriate <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> to be explicit, but I have coalesced
+automation scripts on <a href="https://www.gnu.org/software/bash/manual/bash.html">bash shell</a> (instead of <a href="https://fishshell.com/docs/current/index.html">fish shell</a>).</p>
+<p><strong>Extract, transform, and load functions (ETL).</strong> </p>
+<p><strong>Database and schema creation.</strong> The bash script <code>infrastructure/create-xhcadb</code> will complete 3
+tasks to create the database and define the database schema: (1) drop the database if it exists,
+(2) create the database, and (3) use <code>psql</code> to run <code>sql/ddl/create_schema.sql</code>.</p>
+<p><strong>Dataset loading.</strong> A dataset represents a gene expression matrix and consists of three types of
+data: (1) cell metadata, (2) gene metadata, and (3) gene expression matrix data. The <a href="https://math.nist.gov/MatrixMarket/formats.html">MTX file
+format</a> contains a file for each of these data types, whereas database bulk load
+utilities tend to best support a single TSV (tab-separated values) per schema. Dataset loading
+assumes that the data has already been extracted into a bulk-loadable TSV format, and the
+appropriate directory is checked for the file. The <code>load/load-datasets</code> bash script implements
+logic for loading datasets by calling <code>load/pgsql-copy.genes</code>, <code>load/pgsql-copy.cells-clusters</code>,
+and <code>load/pgsql-copy.expression</code> scripts. Because these data types are loaded into separate tables,
+the only requirement (assuming foreign keys are enabled) is to load gene and cell metadata before
+expression data. If all foreign keys are disabled at the time of load, then this constraint is not
+enforced.</p>
+<p><strong>Top-level Scripts.</strong> There are a few scripts that provide functionality by calling other scripts.
+The important &quot;top-level&quot; scripts include: <code>create-xhcadb.fish</code> and <code>load/load-datasets</code>. When
+using bash, <code>load/load-datasets</code> loads cell annotations, gene annotations, and expression matrix
+data for a dataset into an existing database. To create a database from scratch, use the
+<code>infrastructure/db.create.bash</code> script which takes a database name and runs: (1) dropdb (if db
+exists), (2) createdb, and (3) create schema (<code>psql ... &lt; sql/create_schema.sql</code>). Note that the
+schema load step directly runs a SQL script against the database, rather than invoking another
+shell script.</p>
+<p><code>create-xhcadb.fish</code> should illustrate how to create the database and load it. Note that I have not setup the database server yet, and the <code>extract</code>, <code>transform</code>, <code>load</code>, and <code>insfrastructure</code> directories have bash scripts instead of fish scripts.
+simulated-data/ has only 1 dataset (which I am calling &quot;538-celltypes&quot;), but there are various directories and file formats that are produced/used by the ETL process
+toolbox/ will contain scripts or binaries, and at the moment has a bash script I use to help manage my local postgres databases, &quot;experimentdb&quot;
+This script needs to be adapted for the cloudlab machine
+the &quot;bulk load&quot; format are just simple TSVs but they're formatted to be loadable using COPY
+I have postgresql 13 installed, cuz my home computer is archlinux (rolling releases)
+I use pyenv to manage python interpreters. I am installing 3.9.1 right now and will install 3.7.3 afterwards
+I use poetry for dependency management. I have heard it's just okay, but I haven't decided to switch to anything else yet.
+I have installed Fish shell (in case you use it), but I will be trying to have shell scripts written in bash so that you don't have to learn fish (plus I'm used to scripting in bash now).</p>
+<h4><a class="header" href="#sample-data" id="sample-data">Sample Data</a></h4>
+<p>You can actually play around with some of the loading scripts and use the data in the resources directory:
+https://gitlab.com/xhca/xhcadb/-/tree/develop/resources/simulated-data</p>
+<p>Note that the data in that directory is checked in using git LFS. I just tried doing a fresh checkout, and it'll automatically checkout those files from LFS. If you need to re-download a file from LFS you can retrieve it with
+<code>git lfs checkout -- &lt;file&gt;</code>
+and as long as you aren't adding any other files to LFS you probably don't need to know any other commands. Otherwise, docs here if you're interested: https://www.mankier.com/package/git-lfs</p>
+<!-- resources -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="storage.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="experiment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="storage.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="experiment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

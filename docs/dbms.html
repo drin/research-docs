@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>PostgreSQL DB - Research, documented</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A single location for documentation of all my research. Primarily the research I'd like to continue working with well into the future.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="data.html"><strong aria-hidden="true">1.</strong> Data Domain</a></li><li class="chapter-item expanded "><a href="dbms.html" class="active"><strong aria-hidden="true">2.</strong> PostgreSQL DB</a></li><li class="chapter-item expanded "><a href="storage.html"><strong aria-hidden="true">3.</strong> Storage System</a></li><li class="chapter-item expanded "><a href="repos.html"><strong aria-hidden="true">4.</strong> Code Repositories</a></li><li class="chapter-item expanded "><a href="experiment.html"><strong aria-hidden="true">5.</strong> Experimental Setup</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Research, documented</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#chapter-2---postgresql-db" id="chapter-2---postgresql-db">Chapter 2 - PostgreSQL DB</a></h1>
+<h2><a class="header" href="#overview" id="overview">Overview</a></h2>
+<p>This chapter discusses <code>xhcaDB</code>--a reference <a href="https://www.postgresql.org/">PostgreSQL</a> database for XHCA data.
+This database is designed and implemented from scratch, to analyze single-cell expression data.
+This work is done in coordination with <a href="https://sysbiowiki.soe.ucsc.edu/">Josh Stuart's lab</a>, specifically with
+Bianca Xue, Hongxu Ding, and Josh Stuart.</p>
+<p>Due to this effort being done on our own for prototyping and learning, it is possible that some
+research will need to be done on existing databases that address similar use cases. For timing
+reasons and the need to have infrastructure that we fully control and understand, we are choosing
+this route.</p>
+<p>This database is intended to be both:</p>
+<ul>
+<li>A reference implementation</li>
+<li>A baseline for future performance benchmarks</li>
+</ul>
+<h2><a class="header" href="#database-schema" id="database-schema">Database Schema</a></h2>
+<p>Our schema contains 6 entities (shown in the ERD diagram, below) which represent the core logical
+entities of XHCA data and their relationships.</p>
+<p><img src="assets/Single-Cell-ERD.png" alt="Diagram for relationships between entities for single cell sequencing data" /></p>
+<p>The ERD diagram has some color coding for convenience:</p>
+<ul>
+<li>Blue entities are primary entities (have no foreign keys)</li>
+<li>Green entities are used for set membership
+<ul>
+<li><code>genesets</code> represent sets of genes</li>
+<li><code>clusters</code> represent sets of cells</li>
+</ul>
+</li>
+<li>Yellow entities are logically identical matrices for core expression data
+<ul>
+<li><code>expression</code> represents a matrix of values for each <code>cell</code> and each <code>gene</code></li>
+<li><code>centroids</code> represents a matrix of values for each <code>cluster</code> and each <code>gene</code>, where a
+<code>centroid</code> is essentially a representative cell for the cluster.</li>
+</ul>
+</li>
+<li>Red relationships are logical constraints rather than physical, meaning they are not defined as
+foreign key constraints in the DDL.
+<ul>
+<li>We want to support a one-to-many relationship between clusters and centroids: a cluster may
+have many centroids, but each centroid can only be associated with one cluster</li>
+<li>In <code>cluster_methods</code>, each <code>centroid_id</code> is unique, but <code>cluster_id</code> may be duplicated</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#note" id="note">NOTE:</a></h3>
+<p>Genesets is currently grey, but I think it will be made green to reflect that it is metadata for
+tuples in the <code>geneset_membership</code> entity. It's closest equivalent is <code>cluster_methods</code>, as it
+represents groups of genes in a way that metadata can be attached (e.g.  <code>geneset_group</code>). It is
+not yet clear that it is a core entity, though it seems likely to become one.</p>
+<h2><a class="header" href="#sql-queries" id="sql-queries">SQL Queries</a></h2>
+<p>There are a variety of queries that represent the analysis use cases we want to satisfy. We can
+broadly categorize these into the following types of queries, where <em>many</em> just refers to <em>more
+than one</em> (e.g. 2 is &quot;many&quot;):</p>
+<ol>
+<li>scan (selection only)</li>
+<li>filtration (includes many predicates in <code>where</code> clause)</li>
+<li>projection (projects a proper subset of columns)</li>
+<li>aggregation (includes many aggregation operations)</li>
+</ol>
+<p>The first use case, scan, may not be very interesting since there are very few ways of
+speeding it up. However, I list it here (until there is reason to remove it) so that we can
+consider the throughput of data access for various storage architectures and devices.</p>
+<p>We expect the common case for single-cell expression analysis to consist of some mix of the
+remaining use cases.</p>
+<h2><a class="header" href="#dbms-tuning" id="dbms-tuning">DBMS Tuning</a></h2>
+<p>References to curate later:</p>
+<ul>
+<li><a href="https://wiki.postgresql.org/images/8/86/PostgreSQL_on_ZFS.pdf">PostgreSQL on ZFS</a></li>
+<li><a href="https://pg.uptrace.dev/zfs/">Tuning PostgreSQL on ZFS</a></li>
+<li><a href="https://evol-monkey.blogspot.com/2017/08/postgresql-on-zfs.html">Blog - PostgreSQL on ZFS</a></li>
+</ul>
+<h2><a class="header" href="#foreign-tables" id="foreign-tables">Foreign Tables</a></h2>
+<p>References to curate later:</p>
+<ul>
+<li><a href="https://github.com/uccross/skyhookdm-ceph/blob/skyhook-luminous/src/progly/cloudlab_postgres_bench/postgres-skyhook-example.sql">Skyhook foreign tables</a></li>
+<li><a href="https://www.postgresql.org/docs/13/sql-createforeigndatawrapper.html">PostgreSQL FDW docs</a></li>
+<li><a href="https://www.postgresql.org/docs/13/sql-createforeigntable.html">PostgreSQL Foreign Table</a></li>
+<li><a href="https://heterodb.github.io/pg-strom/arrow_fdw/">Arrow FDW for PG-strom</a></li>
+<li><a href="https://www.postgresql.org/docs/13/ddl-partitioning.html">Table Partitioning</a></li>
+</ul>
+<!-- Note: this likely can be moved to a blog or research-oriented writing of some sort -->
+<!--
+We expect the common case for single-cell expression analysis to be made up of the remaining use
+cases, and we have particular techniques in mind that we believe will provide performance gains in
+storage systems: adaptive physical design management, dynamic pushdowns, and speculative
+materialization.
+-->
+<!-- Scratch
+I started the postgres database (systemctl controls the default install, experimentdb should make
+it easy to specifically manage the one that uses a data directory on the ZFS pool).
+
+ -->
+<!-- resources -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="data.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="storage.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="data.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="storage.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
