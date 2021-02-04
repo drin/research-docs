@@ -7,4 +7,4 @@ multilingual = false
 src          = "content"
 
 [build]
-build-dir    = "compiled-book"
+build-dir    = "docs"
